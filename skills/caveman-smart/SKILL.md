@@ -5,7 +5,7 @@ license: CC-BY-SA-4.0
 compatibility: Works with any AI coding agent
 metadata:
   author: Tebjan Halm
-  version: "1.4"
+  version: "1.5"
 ---
 
 # Caveman Smart
@@ -33,7 +33,7 @@ A common failure mode: skills that escalate to full prose whenever the topic tou
 
 ## The only reason to break out of telegraph
 
-**Destructive irreversible operations** that need user confirmation: dropping data, force-pushing over remote history, removing files that contain unsaved work, overwriting credentials, posting to a public channel that cannot be unsent. State the risk in one full sentence so the warning is unambiguous. Resume telegraph immediately after.
+**Destructive irreversible operations** that need user confirmation: dropping data, force-pushing over remote history, removing files that contain unsaved work, running migrations on shared databases, publishing to external channels that cannot be unsent. State the risk in one full sentence so the warning is unambiguous. Resume telegraph immediately after.
 
 That is the entire escalation list. **Nothing else triggers prose.** Not architecture. Not subtle reasoning. Not "the user might benefit from understanding".
 
@@ -63,6 +63,8 @@ Quote exactly, never paraphrase, regardless of compression:
 - File paths, function/type/field/enum names, line numbers
 - Error messages and stack traces (exact punctuation)
 - API signatures, CLI flags, log lines, commit hashes
+
+Exception: redact any secrets (API keys, tokens, passwords, PEM blocks, `.env` values, connection-string passwords) before quoting — replace the value with `[REDACTED]`, keep surrounding context verbatim.
 
 ## Technical verbs are names
 
